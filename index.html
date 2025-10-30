@@ -5,93 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DryveLyve - Privacy Policy</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             background-color: #f5f5f5;
+            padding: 20px;
         }
+        
         .container {
+            max-width: 900px;
+            margin: 0 auto;
             background-color: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
         h1 {
-            color: #1a73e8;
-            border-bottom: 3px solid #1a73e8;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
         }
+        
         h2 {
-            color: #1a73e8;
+            color: #2c3e50;
+            font-size: 1.8em;
             margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
         }
+        
         h3 {
-            color: #5f6368;
-            margin-top: 25px;
+            color: #34495e;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
-        .effective-date {
-            background-color: #e8f0fe;
-            padding: 15px;
-            border-left: 4px solid #1a73e8;
-            margin: 20px 0;
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
-        .important-note {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-        }
+        
         ul {
-            line-height: 1.8;
+            margin-bottom: 15px;
+            margin-left: 30px;
         }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .last-updated {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        
+        .important-note {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
         .contact-info {
-            background-color: #f8f9fa;
+            background-color: #f9f9f9;
             padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
         }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 2px solid #ecf0f1;
             text-align: center;
-            color: #5f6368;
-            font-size: 14px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>DryveLyve Privacy Policy</h1>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: October 30, 2025</p>
         
-        <div class="effective-date">
-            <strong>Effective Date:</strong> October 30, 2025<br>
-            <strong>Last Updated:</strong> October 30, 2025<br>
-            <strong>Developer:</strong> Nicholas Hudson<br>
-            <strong>Location:</strong> Spring Hill, Tennessee, United States
-        </div>
-
         <h2>Introduction</h2>
-        <p>DryveLyve is committed to your complete privacy. This Privacy Policy explains how our mobile application operates entirely on your device to track mileage and manage expenses.</p>
+        <p>This Privacy Policy explains how DryveLyve, developed by Nicholas Hudson ("we", "us", or "our"), operates entirely on your device to track mileage and manage expenses.</p>
         
         <div class="important-note">
-            <strong>Important:</strong> We do not collect, transmit, store, or access any of your trip, expense, location, or personal information. Everything remains private on your device. This policy explains which device permissions we request and how they are used exclusively for local processing.
+            <strong>Important:</strong> We do not collect, transmit, store, or access any of your trip, expense, location, or personal information on external servers. Everything remains private on your device. This policy explains which device permissions we request and how they are used exclusively for local processing.
         </div>
 
         <h2>What Data We Do NOT Collect</h2>
         <ul>
-            <li><strong>No Personal Information:</strong> We do not collect names, email addresses, phone numbers, or any identifying information</li>
+            <li><strong>No Personal Information:</strong> We do not collect names, email addresses, phone numbers, or any identifying information on external servers</li>
             <li><strong>No Location Data Transmission:</strong> Your GPS coordinates and trip routes never leave your device</li>
             <li><strong>No Financial Data Transmission:</strong> Expense records, mileage rates, and earnings calculations stay on your device</li>
             <li><strong>No User Accounts:</strong> The app requires no registration, login, or user profile</li>
@@ -101,140 +135,166 @@
         <h2>App Functionality</h2>
         <p>DryveLyve runs continuously (24/7) in the background to automatically detect and track driving trips. All data processing occurs locally on your device with no external transmission of your trip, location, or expense data.</p>
 
+        <h2>Optional Crash Reporting and User Feedback</h2>
+        <p>DryveLyve includes optional features that allow you to send crash reports and feedback directly to the developer:</p>
+        
+        <h3>How It Works</h3>
+        <ul>
+            <li><strong>User Control:</strong> When the app crashes, you will be prompted with an option to send a crash report via your email app. This is entirely optional and requires your explicit action.</li>
+            <li><strong>Email-Based:</strong> Crash reports are sent through your device's email app (Gmail, Outlook, etc.) - you can review the entire report before sending.</li>
+            <li><strong>No Automatic Transmission:</strong> Nothing is sent automatically. You must manually choose to send the report.</li>
+            <li><strong>Feedback Button:</strong> The app includes a "Send Feedback" button in Settings that allows you to voluntarily email the developer with questions, issues, or suggestions.</li>
+        </ul>
+
+        <h3>What Crash Reports Contain</h3>
+        <p>If you choose to send a crash report, it includes only technical diagnostic information:</p>
+        <ul>
+            <li>Device manufacturer and model (e.g., "Samsung Galaxy S21")</li>
+            <li>Android version (e.g., "Android 13")</li>
+            <li>App version number</li>
+            <li>Crash timestamp</li>
+            <li>Technical error details (stack trace)</li>
+        </ul>
+
+        <h3>What Crash Reports Do NOT Contain</h3>
+        <ul>
+            <li>No GPS coordinates or location data</li>
+            <li>No trip history or mileage records</li>
+            <li>No expense amounts or financial information</li>
+            <li>No photos or receipt images</li>
+            <li>No personal identifying information</li>
+        </ul>
+
+        <h3>Developer Use of Crash Reports</h3>
+        <p>Crash reports you voluntarily send are used solely to:</p>
+        <ul>
+            <li>Identify and fix bugs in the app</li>
+            <li>Improve app stability and performance</li>
+            <li>Respond to user-reported issues</li>
+        </ul>
+        <p>The developer (Nicholas Hudson) does not share, sell, or distribute crash report information to any third parties.</p>
+
         <h2>Device Permissions Explained</h2>
-        <p>The following permissions are required for the app to function. Each permission is used only for local data processing:</p>
+        <p>The following permissions are required for the app to function. All permissions are used exclusively for local processing on your device:</p>
 
-        <h3>Location Permissions (Required)</h3>
+        <h3>Location Permission (Required)</h3>
         <ul>
-            <li><strong>Precise Location:</strong> Calculates trip distances using GPS</li>
-            <li><strong>Background Location:</strong> Enables 24/7 automatic trip detection when the app is closed or device is locked</li>
-            <li><strong>Data Usage:</strong> Location coordinates are processed and stored only on your device</li>
-            <li><strong>Privacy:</strong> Your location is never transmitted to external servers or accessible to us</li>
-        </ul>
-
-        <h3>Camera Permission (Optional)</h3>
-        <ul>
-            <li><strong>Purpose:</strong> Capture photos of receipts for expense tracking</li>
-            <li><strong>When Used:</strong> Only when you choose to add a receipt photo</li>
-            <li><strong>Storage:</strong> Photos are stored locally on your device only</li>
-            <li><strong>Optional:</strong> You can decline camera permission and still use all other app features</li>
-        </ul>
-
-        <h3>Storage Permission (Required)</h3>
-        <ul>
-            <li><strong>Purpose:</strong> Save receipt photos, export trip reports, and maintain local database</li>
-            <li><strong>Local Database:</strong> All trip and expense data is stored securely in a local database on your device</li>
-            <li><strong>Export Files:</strong> Generated reports are saved to your device for sharing, printing, or emailing</li>
-        </ul>
-
-        <h3>Network/Internet Permission (Limited Use)</h3>
-        <ul>
-            <li><strong>Subscription Verification Only:</strong> The app verifies your subscription status with Google Play Billing but does not transmit your personal information, trip data, or location data</li>
-            <li><strong>WiFi Detection:</strong> Detects WiFi for printer discovery and background tracking optimization</li>
-            <li><strong>Local Printer Access:</strong> Discovers WiFi-enabled printers on your local network</li>
-            <li><strong>No Data Upload:</strong> Trip data, location data, and expense data never leave your device</li>
+            <li><strong>Purpose:</strong> Track GPS coordinates to automatically detect and record driving trips</li>
+            <li><strong>Usage:</strong> Continuous background tracking to monitor your movements and detect when you start/stop driving</li>
+            <li><strong>Storage:</strong> Location data is stored only on your device in the app's local database</li>
+            <li><strong>Privacy:</strong> Your location data never leaves your device</li>
         </ul>
 
         <h3>Activity Recognition Permission (Required)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Detects when you are driving, walking, running, or stationary</li>
-            <li><strong>How It Works:</strong> Uses accelerometer and gyroscope to identify vehicle movement patterns</li>
-            <li><strong>Benefit:</strong> Prevents false trip triggers (walking with your phone won't start a trip)</li>
-            <li><strong>Privacy:</strong> All activity recognition processing occurs locally using Google's Activity Recognition API</li>
+            <li><strong>Purpose:</strong> Distinguish between walking, driving, and being stationary to prevent false trip triggers</li>
+            <li><strong>Usage:</strong> Reduces battery consumption by only activating GPS when driving activity is detected</li>
+            <li><strong>Privacy:</strong> Activity data (still, walking, in vehicle) is processed locally and never transmitted</li>
         </ul>
 
-        <h3>Boot/Startup Permission (Required)</h3>
+        <h3>Camera Permission (Optional)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Allows the app to restart automatically after your device reboots</li>
-            <li><strong>Benefit:</strong> Ensures continuous 24/7 trip tracking even after device restarts</li>
-            <li><strong>Control:</strong> You can disable auto-start in your device settings</li>
+            <li><strong>Purpose:</strong> Scan receipts to extract expense information automatically</li>
+            <li><strong>Usage:</strong> Only activated when you manually choose to scan a receipt</li>
+            <li><strong>Storage:</strong> Receipt images are stored locally on your device</li>
+            <li><strong>Privacy:</strong> Photos never leave your device</li>
         </ul>
 
-        <h3>Battery Optimization Permission (Requested)</h3>
+        <h3>Storage Permission (Required)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Prevents Android from stopping background trip tracking to save battery</li>
-            <li><strong>Recommendation:</strong> Disable battery optimization for DryveLyve to ensure reliable trip detection</li>
-            <li><strong>Optional:</strong> You can decline this permission, but trip detection may be interrupted</li>
+            <li><strong>Purpose:</strong> Save trip records, expense data, and receipt images to your device's internal storage</li>
+            <li><strong>Usage:</strong> Read/write app data, export reports as CSV/PDF files</li>
+            <li><strong>Privacy:</strong> All files remain on your device</li>
         </ul>
 
-        <h3>Notification Permission (Required on Android 13+)</h3>
+        <h3>Notification Permission (Required)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Display persistent notification during trip tracking</li>
-            <li><strong>Required by Android:</strong> Foreground services must show a notification</li>
-            <li><strong>Information Shown:</strong> Trip status, distance, and tracking state</li>
+            <li><strong>Purpose:</strong> Display trip status, tracking alerts, and mileage goal notifications</li>
+            <li><strong>Usage:</strong> Keep you informed about trip detection and app status</li>
+            <li><strong>Privacy:</strong> Notifications are displayed locally on your device only</li>
         </ul>
 
-        <h2>How Your Data is Stored</h2>
-        <p>All data is stored in a local database on your device. This includes:</p>
+        <h3>Boot Permission (Required)</h3>
         <ul>
-            <li>Trip records (start/end location names, distance, duration, classification)</li>
-            <li>Expense records (amount, category, date, description)</li>
-            <li>Receipt photos (stored in app-specific storage)</li>
-            <li>User preferences (mileage rate, notification settings, units)</li>
-        </ul>
-        <p><strong>Device Security:</strong> Modern Android devices automatically encrypt all app data. We recommend enabling device encryption and using a strong screen lock for additional protection.</p>
-
-        <h2>Data Export and Sharing</h2>
-        <ul>
-            <li><strong>Your Control:</strong> You can export your data at any time in CSV or Excel format</li>
-            <li><strong>Export Process:</strong> Files are generated locally and saved to your device storage</li>
-            <li><strong>Sharing:</strong> You choose when and how to share exported files (email, cloud storage, printing)</li>
-            <li><strong>No Automatic Upload:</strong> We never automatically upload or sync your data to external servers</li>
+            <li><strong>Purpose:</strong> Automatically restart trip tracking when your device reboots</li>
+            <li><strong>Usage:</strong> Ensures continuous tracking without manual intervention</li>
+            <li><strong>Privacy:</strong> No data is accessed or transmitted during boot</li>
         </ul>
 
-        <h2>Subscription and Payment Processing</h2>
+        <h2>Local Data Storage</h2>
+        <p>All app data is stored exclusively on your device using:</p>
         <ul>
-            <li><strong>Google Play Billing:</strong> All subscription and payment processing is handled entirely by Google Play Store</li>
-            <li><strong>Subscription Verification:</strong> The app only verifies your subscription status with Google Play Billing - it does not transmit your personal information, trip data, or location data</li>
-            <li><strong>No Payment Data:</strong> We never see or store your credit card information, billing address, or payment details</li>
-            <li><strong>Anonymous to Us:</strong> We cannot identify individual subscribers or link subscription payments to specific devices</li>
+            <li><strong>Room Database:</strong> Trip records, expenses, vehicle information, and user settings</li>
+            <li><strong>Internal Storage:</strong> Receipt images and exported reports</li>
+            <li><strong>SharedPreferences:</strong> App configuration and preferences</li>
         </ul>
+        <p><strong>Important:</strong> If you uninstall the app, all data is permanently deleted from your device. We cannot recover your data because we never had access to it.</p>
 
         <h2>Third-Party Services</h2>
+        <p>DryveLyve uses Google Play Billing for subscription management:</p>
         <ul>
-            <li><strong>Google Play Services:</strong> Used for subscription verification and Activity Recognition API</li>
-            <li><strong>No Analytics:</strong> We do not use third-party analytics services</li>
-            <li><strong>No Advertising:</strong> We do not use advertising networks or tracking pixels</li>
-            <li><strong>No Social Media:</strong> We do not integrate with social media platforms</li>
+            <li><strong>Google Play Billing:</strong> Processes in-app subscription purchases securely through Google's payment system</li>
+            <li><strong>What Google Collects:</strong> Payment information, purchase history, and subscription status are handled by Google Play according to Google's Privacy Policy</li>
+            <li><strong>What We Receive:</strong> We only receive confirmation that your subscription is active/inactive - no payment details</li>
         </ul>
+        <p>We do not use any other third-party analytics, advertising, or tracking services.</p>
+
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not share, sell, rent, or trade your data with anyone because:</p>
+        <ul>
+            <li>We do not have access to your data (it stays on your device)</li>
+            <li>We do not operate servers or cloud storage</li>
+            <li>We do not collect user analytics or tracking information</li>
+        </ul>
+        
+        <h3>Legal Requirements</h3>
+        <p>Since we do not collect or store user data, we have nothing to disclose in response to legal requests. If compelled by law enforcement or legal process, we can only provide publicly available information (app description, features, privacy policy).</p>
 
         <h2>Children's Privacy</h2>
-        <p>DryveLyve is designed for use by individuals who need to track vehicle mileage for business or tax purposes. The app is not directed at children under 13. Subscription purchase requires users to be at least 18 years old or have parental/guardian consent for payment through Google Play Store. We do not knowingly collect personal information from anyone, as all data remains stored locally on the user's device.</p>
+        <p>DryveLyve is designed for adults who drive for business purposes and requires a driver's license to use legally. The app is not intended for children under 13, and we do not knowingly collect information from children.</p>
 
-        <h2>International Users</h2>
-        <p>DryveLyve is currently available in the United States only. Since all data processing occurs locally on your device with no external transmission, there are no international data transfers or cross-border data flows. Your data never leaves your device.</p>
-
-        <h2>Data Security Recommendations</h2>
-        <p>Since your data is stored exclusively on your device, protecting your device protects your data:</p>
+        <h2>Data Security</h2>
+        <p>Your data security is maintained through:</p>
         <ul>
-            <li>Enable device encryption (automatic on most modern Android devices)</li>
-            <li>Use a strong screen lock (PIN, pattern, password, or biometric)</li>
-            <li>Enable remote device wipe capabilities (Find My Device)</li>
-            <li>Export and backup data regularly</li>
-            <li>Keep your device OS and apps updated</li>
-            <li>Report lost or stolen devices to your carrier immediately</li>
+            <li><strong>Device-Only Storage:</strong> All data remains on your device under Android's security model</li>
+            <li><strong>No Transmission:</strong> No opportunity for data interception since nothing is transmitted</li>
+            <li><strong>Android Permissions:</strong> Other apps cannot access DryveLyve's data due to Android's app sandboxing</li>
+            <li><strong>Encryption:</strong> Your device's built-in encryption protects app data when device is locked</li>
+        </ul>
+        <p><strong>Your Responsibility:</strong> Protect your device with a strong PIN/password/biometric lock. If your device is lost or stolen, your DryveLyve data is only as secure as your device lock screen.</p>
+
+        <h2>Your Rights and Choices</h2>
+        <h3>Data Access</h3>
+        <p>You have complete access to all your data through the app's interface. View, edit, or delete any trip, expense, or receipt at any time.</p>
+        
+        <h3>Data Export</h3>
+        <p>Export your data anytime as CSV or PDF files through the Reports section. These files are saved to your device and can be shared as you choose.</p>
+        
+        <h3>Data Deletion</h3>
+        <p>Delete individual trips, expenses, or receipts within the app, or uninstall the app to permanently delete all data from your device.</p>
+
+        <h3>Permission Management</h3>
+        <p>Manage app permissions through Android Settings > Apps > DryveLyve > Permissions. Note that revoking required permissions will prevent the app from functioning properly.</p>
+
+        <h2>California Privacy Rights (CCPA)</h2>
+        <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA):</p>
+        <ul>
+            <li><strong>Right to Know:</strong> All data is stored locally on your device - you have complete knowledge and access</li>
+            <li><strong>Right to Delete:</strong> Delete data through the app or by uninstalling</li>
+            <li><strong>Right to Opt-Out:</strong> Not applicable - we do not sell personal information</li>
+            <li><strong>Non-Discrimination:</strong> We do not discriminate based on privacy rights exercise</li>
         </ul>
 
-        <h2>Your Privacy Rights</h2>
-        <p>Since we don't collect your data, you have complete control:</p>
+        <h2>International Users and GDPR Compliance</h2>
+        <p>While DryveLyve is currently available only in the United States, we recognize data protection principles worldwide:</p>
         <ul>
-            <li><strong>Access:</strong> All your data is accessible within the app at any time</li>
-            <li><strong>Export:</strong> Export data in machine-readable formats (CSV, Excel) whenever you want</li>
-            <li><strong>Delete:</strong> Delete individual trips/expenses in the app or uninstall to remove all data</li>
-            <li><strong>Control:</strong> Revoke permissions or stop tracking at any time</li>
-            <li><strong>Portability:</strong> Exported files can be used in other applications</li>
+            <li><strong>Data Minimization:</strong> We collect only what's necessary (trip/expense data for mileage tracking)</li>
+            <li><strong>Purpose Limitation:</strong> Data is used only for the stated purpose (trip tracking and expense management)</li>
+            <li><strong>Storage Limitation:</strong> Data is retained only as long as you keep the app installed</li>
+            <li><strong>Data Portability:</strong> Export your data anytime in standard formats (CSV, PDF)</li>
         </ul>
 
-        <h2>Legal Compliance</h2>
-
-        <h3>CCPA Compliance (California Users)</h3>
-        <ul>
-            <li><strong>No Sale of Data:</strong> We do not sell, rent, or share your personal information</li>
-            <li><strong>No Collection:</strong> We do not collect personal information on our servers</li>
-            <li><strong>Consumer Rights:</strong> You have complete control over your data stored on your device</li>
-        </ul>
-
-        <h3>U.S. Privacy Laws</h3>
+        <h2>State-Specific Privacy Laws</h2>
         <p>We comply with all applicable United States federal and state privacy laws. Since data never leaves your device, we minimize data exposure and maintain your privacy by design.</p>
 
         <h2>Changes to This Privacy Policy</h2>
@@ -265,22 +325,16 @@
             <li>24/7 background location tracking for automatic trip detection</li>
             <li>Local storage of trip, expense, and location data on your device</li>
             <li>Subscription verification with Google Play Billing</li>
+            <li>Optional sharing of crash reports and feedback via email when you choose to do so</li>
         </ul>
         <p>If you do not agree, please do not use the app. You must accept this Privacy Policy during onboarding to proceed.</p>
 
         <h2>Privacy by Design</h2>
-        <p>We believe privacy is a fundamental right. DryveLyve was designed from the ground up with privacy as the core principle. By keeping all your data exclusively on your device, we ensure:</p>
-        <ul>
-            <li>Complete data sovereignty - you own and control your data</li>
-            <li>No corporate surveillance or monetization of your information</li>
-            <li>No vulnerability to data breaches on our servers</li>
-            <li>No government or third-party access to your trip history</li>
-            <li>True privacy by design and by default</li>
-        </ul>
+        <p>We believe privacy is a fundamental right. DryveLyve was designed from the ground up with privacy as the core principle. By keeping all data on your device and never transmitting it to external servers, we ensure your sensitive financial and location information remains under your complete control.</p>
 
         <div class="footer">
-            <p><em>This Privacy Policy provides complete transparency about DryveLyve's data practices and your absolute control over your personal information.</em></p>
-            <p><a href="terms.html">View Terms of Service</a> | <a href="index.html">Privacy Policy</a></p>
+            <p><em>By using DryveLyve, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.</em></p>
+            <p><a href="index.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
             <p>&copy; 2025 Nicholas Hudson. All rights reserved.</p>
         </div>
     </div>
