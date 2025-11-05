@@ -80,6 +80,14 @@
             margin: 20px 0;
             border-radius: 5px;
         }
+
+        .data-collection-note {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
         
         .contact-info {
             background-color: #f9f9f9;
@@ -114,19 +122,33 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: October 30, 2025</p>
+        <p class="last-updated">Last Updated: November 5, 2025</p>
         
         <h2>Introduction</h2>
-        <p>This Privacy Policy explains how DryveLyve, developed by Nicholas Hudson ("we", "us", or "our"), operates entirely on your device to track mileage and manage expenses.</p>
+        <p>DryveLyve is a mileage tracking app developed by Nicholas Hudson ("we", "us", or "our") that collects and processes location data locally on your device to automatically track your driving trips for mileage logging and business expense tracking.</p>
         
         <div class="important-note">
-            <strong>Important:</strong> We do not collect, transmit, store, or access any of your trip, expense, location, or personal information on external servers. Everything remains private on your device. This policy explains which device permissions we request and how they are used exclusively for local processing.
+            <strong>Key Privacy Principle:</strong> All data collected by DryveLyve is stored and processed locally on your device. We do not transmit, upload, or have access to your trip data, location history, or personal information on external servers. This policy explains how your device permissions are used for local processing only.
         </div>
 
-        <h2>What Data We Do NOT Collect</h2>
+        <h2>What Data We Collect and How We Use It</h2>
+        
+        <div class="data-collection-note">
+            <strong>Location Data (Collected):</strong> We collect and process your GPS coordinates and trip routes to calculate mileage and track your driving trips. This location data is collected continuously in the background, even when the app is closed or not in use. All location data is stored only on your device and is never transmitted to external servers or shared with third parties.
+        </div>
+
         <ul>
-            <li><strong>No Personal Information:</strong> We do not collect names, email addresses, phone numbers, or any identifying information on external servers</li>
-            <li><strong>No Location Data Transmission:</strong> Your GPS coordinates and trip routes never leave your device</li>
+            <li><strong>Location Data:</strong> GPS coordinates and trip routes are collected continuously in the background to automatically detect and record driving trips. This data is processed and stored exclusively on your device for mileage calculation and trip tracking.</li>
+            <li><strong>Activity Recognition Data:</strong> Motion and activity data from your device sensors (accelerometer, gyroscope) is collected to detect when you start and stop driving. This helps prevent false trip triggers and ensures accurate trip detection. All processing occurs locally.</li>
+            <li><strong>Device Information:</strong> Basic device information such as operating system version and app version is collected for functionality purposes. This data stays on your device.</li>
+            <li><strong>Trip Records:</strong> Start/end times, locations, distances, durations, and trip classifications (business/personal) are stored locally on your device.</li>
+            <li><strong>Expense Records:</strong> Amounts, categories, dates, descriptions, and receipt photos are stored locally on your device.</li>
+        </ul>
+
+        <h2>What Data We Do NOT Collect or Transmit</h2>
+        <ul>
+            <li><strong>No External Transmission:</strong> Your GPS coordinates, trip routes, and location data never leave your device or get transmitted to our servers</li>
+            <li><strong>No Personal Information Collection on Servers:</strong> We do not collect names, email addresses, phone numbers, or any identifying information on external servers</li>
             <li><strong>No Financial Data Transmission:</strong> Expense records, mileage rates, and earnings calculations stay on your device</li>
             <li><strong>No User Accounts:</strong> The app requires no registration, login, or user profile</li>
             <li><strong>No Analytics:</strong> We do not use analytics services that track your behavior or app usage</li>
@@ -180,7 +202,7 @@
         <h3>Location Permission (Required)</h3>
         <ul>
             <li><strong>Purpose:</strong> Track GPS coordinates to automatically detect and record driving trips</li>
-            <li><strong>Usage:</strong> Continuous background tracking to monitor your movements and detect when you start/stop driving</li>
+            <li><strong>Usage:</strong> Continuous background tracking to monitor your movements and detect when you start/stop driving, even when the app is closed or not in use</li>
             <li><strong>Storage:</strong> Location data is stored only on your device in the app's local database</li>
             <li><strong>Privacy:</strong> Your location data never leaves your device</li>
         </ul>
@@ -248,7 +270,7 @@
         </ul>
         
         <h3>Legal Requirements</h3>
-        <p>Since we do not collect or store user data, we have nothing to disclose in response to legal requests. If compelled by law enforcement or legal process, we can only provide publicly available information (app description, features, privacy policy).</p>
+        <p>Since we do not collect or store user data on our servers, we have nothing to disclose in response to legal requests. If compelled by law enforcement or legal process, we can only provide publicly available information (app description, features, privacy policy).</p>
 
         <h2>Children's Privacy</h2>
         <p>DryveLyve is designed for adults who drive for business purposes and requires a driver's license to use legally. The app is not intended for children under 13, and we do not knowingly collect information from children.</p>
@@ -320,9 +342,9 @@
         <h2>Your Consent</h2>
         <p>By using DryveLyve, you consent to:</p>
         <ul>
-            <li>The data processing practices described in this Privacy Policy</li>
+            <li>The collection and local processing of location data as described in this Privacy Policy</li>
             <li>Granting the device permissions necessary for app functionality</li>
-            <li>24/7 background location tracking for automatic trip detection</li>
+            <li>24/7 background location tracking for automatic trip detection, even when the app is closed or not in use</li>
             <li>Local storage of trip, expense, and location data on your device</li>
             <li>Subscription verification with Google Play Billing</li>
             <li>Optional sharing of crash reports and feedback via email when you choose to do so</li>
