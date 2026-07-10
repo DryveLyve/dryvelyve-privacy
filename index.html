@@ -115,12 +115,11 @@
 </ul>
 <p>This data is used solely to identify you when you sign in, send a verification email, allow password reset, and link your account to your subscription.</p>
 
-<h3>3. Trial Eligibility Ledger (Stored on Cloud Firestore)</h3>
+<h3>3. Trial Abuse-Prevention Ledger (Stored on Cloud Firestore)</h3>
 <ul>
     <li>SHA-256 hash of your lowercased email address</li>
-    <li>Your email address (used for ownership verification by Firestore security rules)</li>
 </ul>
-<p>This is used to enforce a one-trial-per-email rule across reinstalls and account changes. The SHA-256 hash is one-way and cannot be reversed to retrieve your email.</p>
+<p>This one-way hash is retained to help prevent repeat-trial abuse across reinstalls and account changes. It cannot be reversed to retrieve your email, and is written and read only by DryveLyve's server (Cloud Functions) — the app itself has no access to it.</p>
 
 <h3>4. App Integrity Verification (Transient)</h3>
 <ul>
@@ -152,7 +151,7 @@
 <p>DryveLyve uses the following Google services:</p>
 <ul>
     <li><strong>Firebase Authentication</strong> — account creation, sign-in, password reset, email verification</li>
-    <li><strong>Cloud Firestore</strong> — trial eligibility ledger</li>
+    <li><strong>Cloud Firestore</strong> — trial abuse-prevention ledger</li>
     <li><strong>Firebase App Check (Play Integrity provider)</strong> — fraud prevention</li>
     <li><strong>Google Play Integrity API</strong> — app installation verification</li>
     <li><strong>Google Play Billing</strong> — subscription processing and verification</li>
@@ -213,8 +212,8 @@
 <h3>Cloud Storage (Google)</h3>
 <ul>
     <li>Firebase Auth account data is retained while your account exists</li>
-    <li>Firestore trial-ledger entry is retained while your account exists</li>
-    <li>Both are permanently deleted when you delete your account through the in-app or online deletion option</li>
+    <li>The Firestore trial-ledger entry (a one-way hash of your email) is retained even after account deletion to help prevent repeat-trial abuse</li>
+    <li>Your Firebase Auth account data is permanently deleted when you delete your account through the in-app or online deletion option</li>
     <li>Data is stored in Google's United States data centers</li>
 </ul>
 <p><strong>No DryveLyve Servers:</strong> DryveLyve does not operate its own servers. All cloud-stored data is held by Google Cloud / Firebase.</p>
@@ -228,15 +227,15 @@
 <p>Account deletion removes:</p>
 <ul>
     <li>Your Firebase Authentication account (email and password hash)</li>
-    <li>Your Firestore trial-ledger entry</li>
     <li>Your local subscription record on the device</li>
 </ul>
+<p>For trial-abuse prevention, a one-way hash of your email is retained in the trial ledger after deletion.</p>
 <p>Account deletion does NOT automatically remove your local trip data, expense records, vehicle records, or photos. To remove these, uninstall the app.</p>
 
 <h2>Subscription and Payment Processing</h2>
 <ul>
     <li><strong>Google Play Billing:</strong> All subscription and payment processing is handled entirely by Google Play Store</li>
-    <li><strong>30-Day Free Trial:</strong> New subscribers receive a 30-day free trial, managed by Google Play. One trial per Google account is enforced by Play; one trial per email address is enforced by the Firestore trial ledger.</li>
+    <li><strong>30-Day Free Trial:</strong> New subscribers receive a 30-day free trial, managed by Google Play. One trial per Google account is enforced by Google Play. A one-way hash of your email is retained to help prevent repeat-trial abuse.</li>
     <li><strong>No Payment Data:</strong> DryveLyve never sees or stores your credit card information, billing address, or payment details</li>
     <li><strong>Verification:</strong> Subscription status is verified periodically with Google Play Billing</li>
 </ul>
@@ -279,7 +278,7 @@
 <p>DryveLyve complies with Canada's Personal Information Protection and Electronic Documents Act:</p>
 <ul>
     <li><strong>Consent:</strong> Granted via signup and device permission grants</li>
-    <li><strong>Purpose Limitation:</strong> Email used solely for account management; SHA-256 hash used for trial enforcement</li>
+    <li><strong>Purpose Limitation:</strong> Email used solely for account management; SHA-256 hash retained to help prevent repeat-trial abuse</li>
     <li><strong>Limiting Collection:</strong> Only data strictly necessary for the stated purpose is collected</li>
     <li><strong>No Disclosure:</strong> Personal data is never disclosed to third parties beyond Google (acting as processor)</li>
     <li><strong>Accuracy:</strong> You can update your account by deleting and re-creating</li>
@@ -320,7 +319,7 @@
 <ul>
     <li>Local processing of GPS and motion data for automatic trip detection</li>
     <li>Creation of a Firebase Authentication account using your email and password</li>
-    <li>Storage of a SHA-256 hash of your email and the email itself in Cloud Firestore for trial eligibility enforcement</li>
+    <li>Storage of a one-way SHA-256 hash of your email in Cloud Firestore to help prevent repeat-trial abuse</li>
     <li>Verification of app installation integrity via Google Play Integrity</li>
     <li>Subscription verification through Google Play Billing</li>
     <li>Android Auto Backup of your local app data to your personal Google account (if enabled)</li>
