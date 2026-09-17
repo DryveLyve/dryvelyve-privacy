@@ -82,7 +82,7 @@
 <h1>DryveLyve Privacy Policy</h1>
 <div class="meta">
     <strong>Effective Date:</strong> May 24, 2026<br>
-    <strong>Last Updated:</strong> May 24, 2026
+    <strong>Last Updated:</strong> September 17, 2026
 </div>
 
 <h2>Introduction</h2>
@@ -90,7 +90,7 @@
 
 <div class="intro-callout">
     <p><strong>Local-First for Your Content:</strong> All trip data, location history, expense records, vehicle records, receipt photos, and reports are stored exclusively on your device. None of that ever leaves your device.</p>
-    <p><strong>Cloud Services for Your Account:</strong> Starting with version 10, DryveLyve uses Google's Firebase services to manage your account and verify subscription eligibility. Only your email address and a one-way hash of your email are stored in the cloud — never your trip data or financial information.</p>
+    <p><strong>Cloud Services for Your Account:</strong> Starting with version 10, DryveLyve uses Google's Firebase services to manage your account and verify subscription eligibility. What is stored in the cloud is limited to your account and subscription: your email address, a one-way hash of your email, your subscription status with its Google Play purchase record, and a restore key used to sign you back in on a new phone. Your trip data, expenses, receipts, and earnings are never stored in the cloud.</p>
 </div>
 
 <h2>What We Collect</h2>
@@ -121,13 +121,28 @@
 </ul>
 <p>This one-way hash is retained to help prevent repeat-trial abuse across reinstalls and account changes. It cannot be reversed to retrieve your email, and is written and read only by DryveLyve's server (Cloud Functions) — the app itself has no access to it.</p>
 
-<h3>4. App Integrity Verification (Transient)</h3>
+<h3>4. Subscription Records (Stored on Cloud Firestore)</h3>
+<ul>
+    <li>Your subscription status, plan, expiry date, and whether it renews</li>
+    <li>The Google Play purchase token for your subscription</li>
+    <li>A one-way hash of that purchase token, linked to your account ID</li>
+</ul>
+<p>These records let DryveLyve confirm your subscription with Google Play and stop one purchase being claimed by more than one account. They contain no payment details.</p>
+
+<h3>5. Restore Keys (Stored on Cloud Firestore)</h3>
+<ul>
+    <li>A public key created by your phone, one per device</li>
+    <li>A counter and the date the key was last used</li>
+</ul>
+<p>A restore key signs you in automatically when you move to a new Android phone, so you do not have to type your password again. The private half never leaves your device and is held by Android's Credential Manager, not by DryveLyve. A restore key cannot be used to read your data, and one is created only after your email is verified.</p>
+
+<h3>6. App Integrity Verification (Transient)</h3>
 <ul>
     <li>Tokens from Google's Play Integrity API confirming your app installation is genuine</li>
 </ul>
 <p>These tokens are generated on demand when sensitive operations occur. They are not stored by DryveLyve and are not linked to your personal data.</p>
 
-<h3>5. Device Information (Only with Crash Reports You Send)</h3>
+<h3>7. Device Information (Only with Crash Reports You Send)</h3>
 <ul>
     <li>Device manufacturer and model</li>
     <li>Android version</li>
@@ -151,12 +166,13 @@
 <p>DryveLyve uses the following Google services:</p>
 <ul>
     <li><strong>Firebase Authentication</strong> — account creation, sign-in, password reset, email verification</li>
-    <li><strong>Cloud Firestore</strong> — trial abuse-prevention ledger</li>
+    <li><strong>Cloud Firestore</strong> — trial abuse-prevention ledger, subscription records, and restore keys</li>
     <li><strong>Firebase App Check (Play Integrity provider)</strong> — fraud prevention</li>
     <li><strong>Google Play Integrity API</strong> — app installation verification</li>
     <li><strong>Google Play Billing</strong> — subscription processing and verification</li>
     <li><strong>Google Play Services (Location and Activity Recognition)</strong> — runs on-device; no trip data transmitted</li>
-    <li><strong>Android Auto Backup</strong> — system-level backup to your personal Google account (controlled by your device settings)</li>
+    <li><strong>Cloud Functions</strong> — verifies purchases with Google Play and checks restore keys</li>
+    <li><strong>Android Credential Manager</strong> — holds the restore key on your device</li>
 </ul>
 <p>These services are governed by Google's Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 <p>DryveLyve does NOT use third-party analytics, advertising networks, or marketing platforms.</p>
@@ -206,14 +222,27 @@
 <h3>Local Storage (Your Device)</h3>
 <ul>
     <li>All trip data, expenses, vehicles, photos, and settings are stored in a private SQLite database in your app's private directory</li>
-    <li>Uninstalling the app permanently deletes this data (unless Android Auto Backup is enabled, in which case it is backed up to your personal Google account)</li>
+    <li>Uninstalling the app permanently deletes this data</li>
+    <li><strong>App backup is turned off.</strong> DryveLyve data is never copied to Google Drive or any cloud backup. A direct phone-to-phone transfer during Android setup does copy it to the new phone. Use the in-app export or backup feature to keep your own copy</li>
+</ul>
+
+<h3>Your Own Backups (Optional)</h3>
+<ul>
+    <li>You can choose a folder and turn on automatic daily and yearly backups, and you can export a backup manually at any time</li>
+    <li>A backup file contains your trips, vehicles, odometer records, expenses, earnings, custom platforms and categories, and your receipt and delivery photos</li>
+    <li>Subscription details inside the file are encrypted so they cannot be altered</li>
+    <li>Backup files are written only to the folder you choose and are never uploaded to DryveLyve or read by anyone else. If you pick a folder that syncs to a cloud service, that service's terms apply to the copy it holds</li>
+    <li>Yearly archive backups are kept for the number of years you select in Settings</li>
+    <li>These files remain after you uninstall the app, and anyone with access to that folder can open them, so choose a location you control</li>
 </ul>
 
 <h3>Cloud Storage (Google)</h3>
 <ul>
     <li>Firebase Auth account data is retained while your account exists</li>
+    <li>Subscription records and restore keys are retained while your account exists</li>
     <li>The Firestore trial-ledger entry (a one-way hash of your email) is retained even after account deletion to help prevent repeat-trial abuse</li>
-    <li>Your Firebase Auth account data is permanently deleted when you delete your account through the in-app or online deletion option</li>
+    <li>A one-way hash of your Google Play purchase token, linked to your account ID, is retained after account deletion so the same purchase cannot be claimed by another account</li>
+    <li>Your Firebase Auth account data, subscription record, and restore keys are permanently deleted when you delete your account through the in-app or online deletion option</li>
     <li>Data is stored in Google's United States data centers</li>
 </ul>
 <p><strong>No DryveLyve Servers:</strong> DryveLyve does not operate its own servers. All cloud-stored data is held by Google Cloud / Firebase.</p>
@@ -227,9 +256,15 @@
 <p>Account deletion removes:</p>
 <ul>
     <li>Your Firebase Authentication account (email and password hash)</li>
+    <li>Your subscription record on Cloud Firestore</li>
+    <li>Every restore key for your account, on this device and in the cloud</li>
     <li>Your local subscription record on the device</li>
 </ul>
-<p>For trial-abuse prevention, a one-way hash of your email is retained in the trial ledger after deletion.</p>
+<p>Two items are deliberately kept after deletion. Neither can be reversed to identify you:</p>
+<ul>
+    <li>A one-way hash of your email, in the trial ledger, to help prevent repeat-trial abuse</li>
+    <li>A one-way hash of your Google Play purchase token, linked to your former account ID, so the same purchase cannot be claimed by another account</li>
+</ul>
 <p>Account deletion does NOT automatically remove your local trip data, expense records, vehicle records, or photos. To remove these, uninstall the app.</p>
 
 <h2>Subscription and Payment Processing</h2>
@@ -248,7 +283,7 @@
 
 <h2>Your Privacy Rights</h2>
 <ul>
-    <li><strong>Access:</strong> Local data is accessible via the app. Cloud-stored data (your email and verification status) is displayed in the app's Subscription screen.</li>
+    <li><strong>Access:</strong> Local data is accessible via the app. Cloud-stored data (your email, verification status, and subscription status) is displayed in the app's Account and Subscription screens.</li>
     <li><strong>Export:</strong> Export local trip and expense data as CSV or Excel from the in-app export feature.</li>
     <li><strong>Deletion:</strong> Use in-app or online account deletion to remove all cloud data. Uninstall to remove local data.</li>
     <li><strong>Withdraw Consent:</strong> Sign out of your account at any time. Delete your account to revoke processing of your email.</li>
@@ -270,7 +305,7 @@
 <h3>CCPA (California Users)</h3>
 <ul>
     <li><strong>No Sale of Data:</strong> DryveLyve does not sell, rent, or share your personal information</li>
-    <li><strong>What We Collect:</strong> Email address (account data only). All other data is local.</li>
+    <li><strong>What We Collect:</strong> Email address, subscription status, and a restore key (account data only). All other data is local.</li>
     <li><strong>Right to Know / Delete:</strong> Use the in-app or online deletion feature</li>
 </ul>
 
@@ -322,7 +357,8 @@
     <li>Storage of a one-way SHA-256 hash of your email in Cloud Firestore to help prevent repeat-trial abuse</li>
     <li>Verification of app installation integrity via Google Play Integrity</li>
     <li>Subscription verification through Google Play Billing</li>
-    <li>Android Auto Backup of your local app data to your personal Google account (if enabled)</li>
+    <li>Storage of your subscription status and Google Play purchase record in Cloud Firestore</li>
+    <li>Creation of a restore key so you can be signed in automatically on a new phone</li>
     <li>Optional sharing of crash reports or feedback via email when you choose to do so</li>
 </ul>
 <p>If you do not agree, please do not use the app. Account deletion is available at any time.</p>
@@ -331,7 +367,7 @@
 <p>DryveLyve was designed with privacy as a core principle:</p>
 <ul>
     <li>Trip data, location history, and personal financial data remain on your device</li>
-    <li>Only minimal account identifiers (email and a one-way hash) leave the device</li>
+    <li>Only account and subscription identifiers (email, a one-way hash, subscription status, and a restore key) leave the device</li>
     <li>No analytics, no advertising, no behavioral tracking</li>
     <li>Full data sovereignty over your trip content</li>
     <li>Account deletion available at any time, both in-app and online</li>
