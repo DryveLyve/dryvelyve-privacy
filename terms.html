@@ -83,14 +83,14 @@
 <h1>DryveLyve Terms of Service</h1>
 <div class="meta">
     <strong>Effective Date:</strong> May 24, 2026<br>
-    <strong>Last Updated:</strong> May 24, 2026
+    <strong>Last Updated:</strong> October 25, 2026
 </div>
 
 <h2>Agreement to Terms</h2>
 <p>By downloading, installing, and using the DryveLyve mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
 
 <h2>Description of Service</h2>
-<p>DryveLyve is a mobile application that helps gig drivers and self-employed users track vehicle mileage, calculate trip distances, manage vehicle expenses, capture receipt images, and generate reports for tax and business purposes. The App stores trip and expense data locally on your device. Cloud services (Firebase Authentication and Cloud Firestore) are used for account management and trial eligibility. The App is available in the United States and Canada on a subscription basis after a free trial.</p>
+<p>DryveLyve is a mobile application that helps gig drivers and self-employed users track vehicle mileage, calculate trip distances, manage vehicle expenses, capture receipt images, and generate reports for tax and business purposes. The App stores trip and expense data locally on your device. Cloud services (Firebase Authentication and Cloud Firestore) are used for account management, subscription verification, and restore keys. The App is available in the United States and Canada on a subscription basis after a free trial.</p>
 
 <h2>Eligibility</h2>
 <p>You must be at least 18 years old to use and subscribe to the App. By using the App, you represent that you meet this requirement.</p>
@@ -119,10 +119,11 @@
 <p>DryveLyve reserves the right to terminate accounts that violate these terms.</p>
 <p><strong>Account Deletion:</strong> You may delete your account at any time:</p>
 <ul>
-    <li>In the App: Subscription screen → Delete Account</li>
+    <li>In the App: Account screen → Delete Account</li>
     <li>Online: <a href="https://dryvelyve.github.io/dryvelyve-privacy/delete-account.html">https://dryvelyve.github.io/dryvelyve-privacy/delete-account.html</a></li>
 </ul>
-<p>Account deletion removes your Firebase Authentication account and local subscription record. A one-way hash of your email is retained in our trial ledger to help prevent repeat-trial abuse. Local trip data and expense records are not automatically removed; uninstall the App to remove these.</p>
+<p>Account deletion removes your Firebase Authentication account, your subscription record, and your restore keys. Deleting in the App also erases everything the App stores on your device; backups you saved to a folder of your choice are kept. A deletion request made online removes cloud data only; uninstall the App to remove data on your device. A one-way hash of your Google Play purchase token is retained to prevent the same purchase being claimed by another account.</p>
+<p><strong>Deleting your account does not cancel your Google Play subscription.</strong> Cancel it in the Google Play Store first.</p>
 
 <h2>Subscription Terms</h2>
 
@@ -130,7 +131,6 @@
 <ul>
     <li><strong>30-Day Trial:</strong> New subscribers receive a 30-day free trial managed by Google Play.</li>
     <li><strong>One Trial Per Google Account:</strong> Enforced by Google Play.</li>
-    <li><strong>Trial Abuse Prevention:</strong> DryveLyve retains a one-way hash of your email to help detect and prevent repeat-trial abuse.</li>
     <li><strong>Full Access:</strong> Complete access to all features during the trial.</li>
     <li><strong>Cancellation:</strong> Cancel anytime in Google Play subscriptions to avoid being charged.</li>
 </ul>
@@ -261,7 +261,7 @@
     <li>Delete your account through the in-app or online deletion option.</li>
     <li>Uninstall the App from your device anytime.</li>
     <li>Uninstalling deletes all locally stored data permanently.</li>
-    <li>Deleting your account removes cloud-stored account data but does not automatically remove local trip data.</li>
+    <li>Deleting your account in the App removes cloud-stored account data and erases all App data on your device. Online deletion removes cloud data only.</li>
 </ul>
 
 <h3>By DryveLyve</h3>
@@ -315,7 +315,8 @@
 <ul>
     <li><strong>Google Play Store:</strong> Governed by Google's Terms of Service.</li>
     <li><strong>Google Play Billing:</strong> Subject to Google Play's payment terms.</li>
-    <li><strong>Firebase (Authentication, Firestore, App Check):</strong> Subject to Google's Firebase Terms of Service.</li>
+    <li><strong>Firebase (Authentication, Firestore, Cloud Functions, App Check):</strong> Subject to Google's Firebase Terms of Service.</li>
+    <li><strong>Google ML Kit:</strong> Subject to Google's ML Kit Terms of Service.</li>
     <li><strong>No Liability:</strong> DryveLyve is not responsible for third-party service failures.</li>
     <li><strong>Changes:</strong> Google may change services or terms anytime.</li>
 </ul>
