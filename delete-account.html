@@ -120,13 +120,14 @@
 <h1>Delete Your DryveLyve Account</h1>
 <div class="meta">
     <strong>Effective Date:</strong> May 24, 2026<br>
-    <strong>Last Updated:</strong> May 24, 2026
+    <strong>Last Updated:</strong> October 25, 2026
 </div>
 
 <p>This page explains how to request deletion of your DryveLyve account and associated data. DryveLyve is a mileage tracking app for gig drivers, developed by DryveLyve Support based in Spring Hill, Tennessee, United States.</p>
 
 <div class="warning">
-    <strong>This action is permanent and cannot be undone.</strong> Once your account is deleted, you cannot recover it. If you wish to use DryveLyve again, you will need to create a new account.
+    <p><strong>This action is permanent and cannot be undone.</strong> Once your account is deleted, you cannot recover it. If you wish to use DryveLyve again, you will need to create a new account.</p>
+    <p><strong>Deleting your account does not cancel your Google Play subscription.</strong> Cancel it first in the Play Store (Play Store → profile icon → Payments &amp; subscriptions → Subscriptions → DryveLyve), or you will keep being charged.</p>
 </div>
 
 <h2>How to Delete Your Account</h2>
@@ -136,11 +137,12 @@
     <p>If you have the DryveLyve app installed and can sign in, this is the fastest method:</p>
     <ol>
         <li>Open the DryveLyve app on your Android device.</li>
-        <li>Navigate to the <strong>Subscription</strong> screen (accessible from the dashboard subscription badge or from Settings).</li>
-        <li>Scroll to the bottom and tap <strong>Delete Account</strong>.</li>
-        <li>Confirm the deletion in the confirmation dialog.</li>
+        <li>Open the menu and tap <strong>Account</strong>.</li>
+        <li>Tap <strong>Delete Account</strong>.</li>
+        <li>If you still have a subscription, tap <strong>Manage Subscription</strong> in the confirmation dialog to cancel it in the Play Store first.</li>
+        <li>Confirm the deletion. If you have not signed in recently, enter your password when asked.</li>
     </ol>
-    <p>The deletion is processed immediately. You will be returned to the email-verification screen.</p>
+    <p>The deletion is processed immediately. DryveLyve then erases everything it stores on your phone and closes.</p>
 </div>
 
 <div class="method-card">
@@ -152,6 +154,7 @@
         <li>Include the email address associated with your DryveLyve account in the body of the email.</li>
     </ol>
     <p>We will process your request within <strong>7 business days</strong> and confirm by reply email once deletion is complete.</p>
+    <p>An email request deletes your cloud data only. It cannot reach your phone, so uninstall the app to remove the data stored there.</p>
     <p>
         <a class="email-button" href="mailto:dryvelyve.supp0rt@gmail.com?subject=Account%20Deletion%20Request&amp;body=I%20would%20like%20to%20delete%20my%20DryveLyve%20account.%0A%0AEmail%20associated%20with%20my%20account%3A%20">
             Open Email to Request Deletion
@@ -160,29 +163,36 @@
 </div>
 
 <h2>What Gets Deleted</h2>
-<p>When your account is deleted, the following data is permanently removed:</p>
+<p>When your account is deleted, the following data is permanently removed from Google's cloud:</p>
 <ul>
     <li>Your Firebase Authentication account (email address and hashed password)</li>
-    <li>Your Cloud Firestore trial-eligibility ledger entry (SHA-256 hash of your email and the email itself)</li>
-    <li>Your local subscription record on the device (if signed in via the in-app method)</li>
+    <li>Your subscription record on Cloud Firestore</li>
+    <li>Every restore key for your account</li>
 </ul>
-
-<h2>What Is NOT Automatically Deleted</h2>
-<p>The following data is stored exclusively on your device and is <strong>not</strong> affected by account deletion:</p>
+<p>When you delete your account <strong>in the app</strong>, DryveLyve also erases everything it stores on your phone:</p>
 <ul>
     <li>Trip records (waypoints, distances, durations)</li>
     <li>Vehicle records and odometer history</li>
     <li>Expense records (fuel, maintenance, and other categories)</li>
-    <li>Receipt photos</li>
+    <li>Receipt and delivery photos</li>
     <li>Earnings, platform performance, and custom categories</li>
     <li>App settings and language preferences</li>
+    <li>The restore key held on your phone</li>
 </ul>
-<p>To remove this local data, <strong>uninstall the DryveLyve app</strong> from your device. Uninstalling permanently deletes all locally stored data unless Android Auto Backup is enabled in your device settings, in which case some data may be restored if you reinstall the app on the same Google account.</p>
+
+<h2>What Is NOT Deleted</h2>
+<ul>
+    <li><strong>Your own backup files:</strong> Backups you saved to a folder of your choice stay there. They are your files to keep or delete.</li>
+    <li><strong>Data on your phone after an email request:</strong> Uninstall the app to remove it. App backup is turned off, so nothing is restored from a Google backup if you reinstall.</li>
+    <li><strong>Purchase record hash:</strong> A one-way hash of your Google Play purchase token, linked to your former account ID, is kept so the same purchase cannot be claimed by another account. It cannot be reversed to identify you.</li>
+    <li><strong>Your Google Play subscription:</strong> Managed by Google Play, not DryveLyve. Cancel it in the Play Store.</li>
+</ul>
 
 <h2>Retention Period</h2>
 <ul>
     <li><strong>Firebase Authentication account:</strong> Deleted immediately upon request.</li>
-    <li><strong>Firestore trial-ledger entry:</strong> Deleted immediately upon request.</li>
+    <li><strong>Subscription record and restore keys:</strong> Deleted immediately upon request.</li>
+    <li><strong>Purchase record hash:</strong> Kept for fraud prevention, as described above.</li>
     <li><strong>Google's internal backup snapshots:</strong> Up to 30 days, then permanently deleted by Google. DryveLyve does not have access to or control over these backups.</li>
 </ul>
 <p>DryveLyve does not operate its own servers. There is no manual retention of your data outside of Google's Firebase platform.</p>
