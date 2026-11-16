@@ -82,7 +82,7 @@
 <h1>DryveLyve Privacy Policy</h1>
 <div class="meta">
     <strong>Effective Date:</strong> May 24, 2026<br>
-    <strong>Last Updated:</strong> October 25, 2026
+    <strong>Last Updated:</strong> November 15, 2026
 </div>
 
 <h2>Introduction</h2>
@@ -120,6 +120,7 @@
     <li>Your subscription status, plan, expiry date, and whether it renews</li>
     <li>The Google Play purchase token for your subscription</li>
     <li>A one-way hash of that purchase token, linked to your account ID</li>
+    <li>If you redeem a developer code: the code and when its free access ends</li>
 </ul>
 <p>These records let DryveLyve confirm your subscription with Google Play and stop one purchase being claimed by more than one account. They contain no payment details.</p>
 
@@ -243,9 +244,9 @@
 <h3>Cloud Storage (Google)</h3>
 <ul>
     <li>Firebase Auth account data is retained while your account exists</li>
-    <li>Subscription records and restore keys are retained while your account exists</li>
+    <li>Subscription records, developer code records, and restore keys are retained while your account exists</li>
     <li>A one-way hash of your Google Play purchase token, linked to your account ID, is retained after account deletion so the same purchase cannot be claimed by another account</li>
-    <li>Your Firebase Auth account data, subscription record, and restore keys are permanently deleted when you delete your account through the in-app or online deletion option</li>
+    <li>Your Firebase Auth account data, subscription record, developer code record, and restore keys are permanently deleted when you delete your account through the in-app or online deletion option</li>
     <li>Data is stored in Google's United States data centers</li>
 </ul>
 <p><strong>No DryveLyve Servers:</strong> DryveLyve does not operate its own servers. All cloud-stored data is held by Google Cloud / Firebase.</p>
@@ -260,7 +261,7 @@
 <p>Deleting your account in the app removes:</p>
 <ul>
     <li>Your Firebase Authentication account (email and password hash)</li>
-    <li>Your subscription record on Cloud Firestore</li>
+    <li>Your subscription record and any developer code record on Cloud Firestore</li>
     <li>Every restore key for your account, on this device and in the cloud</li>
     <li>Everything DryveLyve stores on this phone: all trips, expenses, vehicles, receipt and delivery photos, and settings. DryveLyve closes when it finishes.</li>
 </ul>
