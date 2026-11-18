@@ -82,14 +82,14 @@
 <h1>DryveLyve Privacy Policy</h1>
 <div class="meta">
     <strong>Effective Date:</strong> May 24, 2026<br>
-    <strong>Last Updated:</strong> November 15, 2026
+    <strong>Last Updated:</strong> November 18, 2026
 </div>
 
 <h2>Introduction</h2>
 <p>DryveLyve is a mileage tracking app for gig drivers. It uses GPS, motion sensors, and Google Play services to automatically detect and record driving trips for tax and business expense purposes.</p>
 
 <div class="intro-callout">
-    <p><strong>Local-First for Your Content:</strong> All trip data, location history, expense records, vehicle records, receipt photos, and reports are stored exclusively on your device. None of that ever leaves your device.</p>
+    <p><strong>Local-First for Your Content:</strong> All trip data, location history, expense records, vehicle records, receipt photos, and reports are stored exclusively on your device. None of that ever leaves your device, except trip positions sent for street addresses if you turn that option on (section 8).</p>
     <p><strong>Cloud Services for Your Account:</strong> Starting with version 10, DryveLyve uses Google's Firebase services to manage your account and verify subscription eligibility. What is stored in the cloud is limited to your account and subscription: your email address, your subscription status with its Google Play purchase record, and a restore key used to sign you back in on a new phone. Your trip data, expenses, receipts, and earnings are never stored in the cloud.</p>
 </div>
 
@@ -104,7 +104,7 @@
     <li>Receipt photos</li>
     <li>Earnings, platform performance, and custom categories</li>
 </ul>
-<p>GPS coordinates and motion data are continuously processed on your device to automatically detect when trips start and end. Background location polling runs at a reduced interval between trips to conserve battery. This data is stored in a private SQLite database within your app's private directory. It is never transmitted to DryveLyve servers or any third party, and is never used for advertising, profiling, analytics, or any purpose unrelated to mileage tracking.</p>
+<p>GPS coordinates and motion data are continuously processed on your device to automatically detect when trips start and end. Background location polling runs at a reduced interval between trips to conserve battery. This data is stored in a private SQLite database within your app's private directory. It is never transmitted to DryveLyve servers or any third party, and is never used for advertising, profiling, analytics, or any purpose unrelated to mileage tracking. The only exception is optional street addresses (section 8).</p>
 
 <h3>2. Account Data (Stored on Firebase Authentication)</h3>
 <ul>
@@ -155,9 +155,13 @@
 </ul>
 <p>This information is sent only if you explicitly choose to submit a crash report or feedback via your device's email app. Crash reports contain no GPS coordinates, trip history, expense amounts, photos, or other personal data.</p>
 
+<h3>8. Optional Street Addresses (Sent to Google Only If You Turn Them On)</h3>
+<p>Street addresses are off unless you turn them on, during setup or in Settings → Privacy. When they are on, the positions of your trips (start, end, stops and delivery photo spots) are sent to Google's address service through Android, to look up street addresses. Google returns the address and DryveLyve stores it only on your device. No trip times, distances, earnings or other details are sent with the position.</p>
+<p>With street addresses off, no position leaves your device and trips show positions instead. You can turn them off at any time; when you do, you can also remove the street addresses already saved. Addresses already printed on delivery photos are part of the image and stay.</p>
+
 <h2>What We Do NOT Collect</h2>
 <ul>
-    <li><strong>GPS coordinates or trip data is never sent off your device.</strong></li>
+    <li><strong>GPS coordinates or trip data is never sent off your device,</strong> except trip positions for optional street addresses (section 8).</li>
     <li>No names, phone numbers, addresses, or other identifying information beyond your email.</li>
     <li>No expense amounts, earnings, or financial transactions are transmitted externally.</li>
     <li>No analytics or crash-reporting tools (Google Analytics, Firebase Analytics, Crashlytics, etc.). The only diagnostic data that leaves your device is ML Kit's, described in section 6.</li>
@@ -178,6 +182,7 @@
     <li><strong>Cloud Functions</strong> — verifies purchases with Google Play and checks restore keys</li>
     <li><strong>Android Credential Manager</strong> — holds the restore key on your device</li>
     <li><strong>Google ML Kit</strong> — reads receipt text and scans documents on your device; sends diagnostic data to Google (section 6)</li>
+    <li><strong>Google address service (through Android)</strong> — only if you turn on street addresses; receives trip positions and returns street addresses (section 8)</li>
 </ul>
 <p>These services are governed by Google's Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 <p>DryveLyve does NOT use analytics tools, advertising networks, or marketing platforms.</p>
@@ -188,7 +193,7 @@
 <ul>
     <li><strong>Precise Location (GPS):</strong> Required to detect trip start and stop points and record trip waypoints for mileage calculation</li>
     <li><strong>Background Location:</strong> Required for automatic trip detection while the app runs in the background</li>
-    <li><strong>Local Processing:</strong> All location data is processed and stored locally on your device and is never transmitted externally</li>
+    <li><strong>Local Processing:</strong> All location data is processed and stored locally on your device and is never transmitted externally, except trip positions sent for optional street addresses (section 8)</li>
 </ul>
 
 <h3>Activity Recognition (Required)</h3>
@@ -218,8 +223,8 @@
 
 <h3>Internet (Required)</h3>
 <ul>
-    <li><strong>Purpose:</strong> Firebase Authentication, Cloud Firestore, Cloud Functions, Play Integrity, Google Play Billing, and ML Kit diagnostics</li>
-    <li><strong>No Trip Data Transmission:</strong> Your trip data, location history, expense records, and photos are never transmitted over the internet</li>
+    <li><strong>Purpose:</strong> Firebase Authentication, Cloud Firestore, Cloud Functions, Play Integrity, Google Play Billing, ML Kit diagnostics, and optional street addresses</li>
+    <li><strong>No Trip Data Transmission:</strong> Your trip data, location history, expense records, and photos are never transmitted over the internet, except trip positions for optional street addresses (section 8)</li>
 </ul>
 
 <h2>Data Storage and Retention</h2>
@@ -301,7 +306,7 @@
 <ul>
     <li><strong>Data Controller:</strong> DryveLyve (Spring Hill, Tennessee, USA), through its use of Firebase services managed by Google</li>
     <li><strong>Legal Basis:</strong> Consent (granted via signup) and contract performance</li>
-    <li><strong>Data Processor:</strong> Google LLC (via Firebase Authentication, Cloud Firestore, Cloud Functions, App Check, Play Integrity, ML Kit)</li>
+    <li><strong>Data Processor:</strong> Google LLC (via Firebase Authentication, Cloud Firestore, Cloud Functions, App Check, Play Integrity, ML Kit, and the address service if you turn on street addresses)</li>
     <li><strong>International Transfer:</strong> Account data is stored in Google's United States data centers under Standard Contractual Clauses</li>
     <li><strong>Your Rights:</strong> Access, rectification, erasure, restriction, portability, and objection</li>
     <li><strong>Right to Erasure:</strong> Use the in-app or online account deletion feature</li>
@@ -310,7 +315,7 @@
 <h3>CCPA (California Users)</h3>
 <ul>
     <li><strong>No Sale of Data:</strong> DryveLyve does not sell, rent, or share your personal information</li>
-    <li><strong>What We Collect:</strong> Email address, subscription status, and a restore key (account data), plus ML Kit's receipt-scanning diagnostics sent to Google (section 6). All trip and financial data stays on your device.</li>
+    <li><strong>What We Collect:</strong> Email address, subscription status, and a restore key (account data), plus ML Kit's receipt-scanning diagnostics sent to Google (section 6), and trip positions for street addresses only if you turn them on (section 8). All other trip data and all financial data stay on your device.</li>
     <li><strong>Right to Know / Delete:</strong> Use the in-app or online deletion feature</li>
 </ul>
 
@@ -364,6 +369,7 @@
     <li>Storage of your subscription status and Google Play purchase record in Cloud Firestore</li>
     <li>Creation of a restore key so you can be signed in automatically on a new phone</li>
     <li>ML Kit sending receipt-scanning diagnostic data to Google, as described in section 6</li>
+    <li>If you turn on street addresses, trip positions being sent to Google's address service, as described in section 8</li>
     <li>Optional sharing of crash reports or feedback via email when you choose to do so</li>
 </ul>
 <p>If you do not agree, please do not use the app. Account deletion is available at any time.</p>
@@ -372,7 +378,7 @@
 <p>DryveLyve was designed with privacy as a core principle:</p>
 <ul>
     <li>Trip data, location history, and personal financial data remain on your device</li>
-    <li>Only account and subscription identifiers (email, subscription status, and a restore key) and ML Kit's scanner diagnostics leave the device</li>
+    <li>Only account and subscription identifiers (email, subscription status, and a restore key), ML Kit's scanner diagnostics, and (if you turn them on) trip positions for street addresses leave the device</li>
     <li>No analytics tools, no advertising, no behavioral tracking</li>
     <li>Full data sovereignty over your trip content</li>
     <li>Account deletion available at any time, both in-app and online</li>
